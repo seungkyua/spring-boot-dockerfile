@@ -1,0 +1,10 @@
+FROM ubuntu:20.04
+MAINTAINER Ahn Seungkyu
+
+RUN apt-get update
+RUN apt-get install -y openjdk-8-jdk
+
+VOLUME /tmp
+COPY target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+
