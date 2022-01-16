@@ -37,7 +37,12 @@ $ docker container exec -it myapp sh
 $ docker container rm -f myapp
 $ docker push seungkyua/spring-boot-dockerfile:alpine-cmd
 
-
-
-
+## Dockerfile5
+$ DOCKER_BUILDKIT=1 docker build -t seungkyua/spring-boot-dockerfile:alpine-stage -f Dockerfile5 .
+$ docker image ls | grep alpine
+$ docker run -d --name myapp -p 9000:9000 seungkyua/spring-boot-dockerfile:alpine-stage --server.port=9000
+$ docker container ps | grep myapp
+$ docker container exec -it myapp sh
+$ docker container rm -f myapp
+$ docker push seungkyua/spring-boot-dockerfile:alpine-stage
 
